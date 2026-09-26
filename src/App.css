@@ -1,221 +1,223 @@
+.display {
+  font-family: 'Arial Narrow', 'Franklin Gothic Medium', 'Roboto Condensed', system-ui,
+    sans-serif;
+  font-stretch: condensed;
+  letter-spacing: -0.01em;
+}
+
 .shell {
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
-.main {
-  width: 100%;
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 40px 20px 64px;
-  flex: 1;
-}
-
-/* Header */
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 24px;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
   position: sticky;
   top: 0;
   z-index: 10;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 20px;
-  background: var(--panel);
-  color: var(--panel-text);
 }
 
 .brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  font-size: 13px;
+  font-size: 19px;
   font-weight: 700;
-  color: var(--panel);
-  background: var(--brass);
-  border-radius: 4px;
-}
-
-.brand-name {
-  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
 }
 
 .nav {
   display: flex;
-  gap: 4px;
+  gap: 24px;
 }
 
 .nav-link {
-  padding: 7px 14px;
-  font: inherit;
-  font-size: 15px;
-  color: var(--panel-text);
   background: none;
-  border: 0;
-  border-radius: 4px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 4px 0;
+  color: var(--steel);
+  font: inherit;
   cursor: pointer;
-  opacity: 0.7;
 }
 
 .nav-link:hover {
-  opacity: 1;
+  color: var(--ink);
 }
 
-.nav-link.is-active {
-  opacity: 1;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 -2px 0 var(--brass);
+.nav-link.active {
+  color: var(--ink);
+  border-bottom-color: var(--brass);
 }
 
-/* Teks utama */
+.main {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px 64px;
+}
+
 .masthead,
 .page {
-  padding-bottom: 32px;
+  padding: 64px 0 40px;
 }
 
-.display {
-  margin: 0 0 12px;
-  font-size: clamp(30px, 6vw, 44px);
-  line-height: 1.15;
+.masthead {
+  border-bottom: 1px solid var(--line);
+}
+
+.masthead h1,
+.page h1 {
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  line-height: 1.05;
   letter-spacing: -0.02em;
+  margin: 0 0 16px;
 }
 
 .lede {
-  max-width: 62ch;
-  margin: 0;
   color: var(--steel);
+  max-width: 46ch;
+  margin: 0;
 }
 
-/* Daftar stok */
 .list-head {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 12px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--line);
+  padding: 32px 0 8px;
 }
 
 .list-head h2 {
-  margin: 0;
-  font-size: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .count {
-  font-size: 14px;
   color: var(--steel);
+  font-size: 0.9rem;
 }
 
 .stock {
-  display: grid;
-  gap: 16px;
-  margin: 20px 0 0;
-  padding: 0;
   list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
 }
 
-/* Kartu produk */
 .card {
   display: flex;
-  gap: 18px;
-  padding: 18px;
+}
+
+.card-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 0 14px;
   background: #fff;
   border: 1px solid var(--line);
-  border-radius: 6px;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
-.card-image {
-  flex: none;
-  width: 96px;
-  height: 96px;
-  object-fit: contain;
-  background: var(--paper);
-  border-radius: 4px;
+.card-btn:hover {
+  border-color: var(--brass);
 }
 
-.card-body {
-  min-width: 0;
-  flex: 1;
+.card-img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--line);
 }
 
-.card-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
+.card .name,
+.card .type,
+.card .price {
+  padding: 0 14px;
 }
 
-.card-name {
-  margin: 0;
-  font-size: 19px;
-}
-
-.card-price {
-  margin: 0;
+.name {
+  font-size: 1.2rem;
   font-weight: 700;
+}
+
+.price {
   color: var(--brass);
-  white-space: nowrap;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
 }
 
-.specs {
-  display: flex;
-  gap: 20px;
-  margin: 8px 0 10px;
-}
-
-.spec {
-  display: flex;
-  gap: 6px;
-  font-size: 14px;
-}
-
-.spec dt {
+.type {
   color: var(--steel);
+  font-size: 0.9rem;
 }
 
-.spec dd {
-  margin: 0;
-  font-weight: 700;
+.popup {
+  width: min(420px, calc(100vw - 32px));
+  padding: 0 0 20px;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: var(--paper);
 }
 
-.card-text {
-  margin: 0;
-  font-size: 15px;
-  color: var(--steel);
+.popup::backdrop {
+  background: rgb(24 34 44 / 0.55);
 }
 
-/* Footer */
+.popup-img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.popup h3,
+.popup p,
+.popup form {
+  margin: 0 20px;
+}
+
+.popup h3 {
+  font-size: 1.5rem;
+}
+
+.popup p {
+  margin-top: 8px;
+}
+
+.popup-close {
+  margin-top: 20px;
+  padding: 8px 18px;
+  border: 1px solid var(--ink);
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.popup-close:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
 .footer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 20px;
-  justify-content: space-between;
-  padding: 18px 20px;
-  font-size: 14px;
-  color: var(--panel-text);
+  margin-top: auto;
+  padding: 20px 24px;
+  text-align: center;
   background: var(--panel);
+  color: var(--panel-text);
 }
 
 .footer p {
   margin: 0;
-}
-
-@media (max-width: 560px) {
-  .card {
-    flex-direction: column;
-  }
-
-  .card-image {
-    width: 100%;
-    height: 120px;
-  }
 }
