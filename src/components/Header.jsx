@@ -1,23 +1,18 @@
-const TABS = ['Catalog', 'About', 'Contact']
+const NAV = ['Catalog', 'About', 'Contact']
 
 function Header({ tab, onTab }) {
   return (
     <header className="header">
-      <div className="brand">
-        <span className="brand-mark">B&amp;B</span>
-        <span className="brand-name">Bore &amp; Barrel</span>
-      </div>
-
-      <nav className="nav" aria-label="Main">
-        {TABS.map((name) => (
+      <span className="brand display">Bore &amp; Barrel</span>
+      <nav className="nav">
+        {NAV.map((item) => (
           <button
-            key={name}
+            key={item}
             type="button"
-            className={name === tab ? 'nav-link is-active' : 'nav-link'}
-            aria-current={name === tab ? 'page' : undefined}
-            onClick={() => onTab(name)}
+            className={tab === item ? 'nav-link active' : 'nav-link'}
+            onClick={() => onTab(item)}
           >
-            {name}
+            {item}
           </button>
         ))}
       </nav>
