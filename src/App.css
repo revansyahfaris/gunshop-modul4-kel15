@@ -221,3 +221,13 @@
 .footer p {
   margin: 0;
 }
+
+.install-btn {
+  padding: 4px 14px;
+  border: 1px solid var(--brass);
+  background: none;
+  color: var(--brass);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}

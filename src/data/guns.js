@@ -53,6 +53,33 @@ const GUNS = [
     description:
       'The other pump gun. Twin action bars, a simple safety on the tang, and a price that leaves money for ammunition.',
   },
+  {
+    name: 'Sniper Rifle',
+    type: 'Sniper',
+    caliber: '12mm',
+    price: 699,
+    image: '/guns/sniper-rifle.jpg',
+    description:
+      'sniper mematikan iki',
+  },
+  {
+    name: 'Pistol',
+    type: 'Pistol',
+    caliber: '3.5mm',
+    price: 159,
+    image: '/guns/pistol.jpg',
+    description:
+      'pistol mematikan iki',
+  },
+  {
+    name: 'Sub Machine Gun',
+    type: 'Machine Gun',
+    caliber: '3.5mm',
+    price: 559,
+    image: '/guns/submachine-gun.jpg',
+    description:
+      'machine gun mematikan iki',
+  },
 ]
 
 export default GUNS
