@@ -58,7 +58,7 @@ const GUNS = [
     type: 'Sniper',
     caliber: '12mm',
     price: 699,
-    image: '/guns/sniper-rifle.jpg',
+    image: '/guns/sniper-rifle.webp',
     description:
       'sniper mematikan iki',
   },
@@ -67,7 +67,7 @@ const GUNS = [
     type: 'Pistol',
     caliber: '3.5mm',
     price: 159,
-    image: '/guns/pistol.jpg',
+    image: '/guns/pistol.webp',
     description:
       'pistol mematikan iki',
   },
@@ -76,7 +76,7 @@ const GUNS = [
     type: 'Machine Gun',
     caliber: '3.5mm',
     price: 559,
-    image: '/guns/submachine-gun.jpg',
+    image: '/guns/submachine-gun.webp',
     description:
       'machine gun mematikan iki',
   },

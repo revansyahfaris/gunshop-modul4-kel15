@@ -8,13 +8,18 @@ import './App.css'
 
 function App() {
   const [tab, setTab] = useState('Catalog')
+  const [cart, setCart] = useState({})
+
+  function setQty(name, qty) {
+    setCart(({ [name]: _drop, ...rest }) => (qty < 1 ? rest : { ...rest, [name]: qty }))
+  }
 
   return (
     <div className="shell">
-      <Header tab={tab} onTab={setTab} />
+      <Header tab={tab} onTab={setTab} cart={cart} onQty={setQty} />
 
       <main className="main">
-        {tab === 'Catalog' && <Catalog />}
+        {tab === 'Catalog' && <Catalog onAdd={(name) => setCart((c) => ({ ...c, [name]: (c[name] ?? 0) + 1 }))} />}
         {tab === 'About' && <About />}
         {tab === 'Contact' && <Contact />}
       </main>
